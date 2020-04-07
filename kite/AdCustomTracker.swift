@@ -11,8 +11,73 @@ import AppsFlyerLib
 
 class AdCustomTracker: NSObject, AppsFlyerTrackerDelegate {
     
+    var afDevKey: String
+    {
+        get
+        {
+            return AppsFlyerTracker.shared().appsFlyerDevKey
+        }
+        
+        set (newAFDevKey)
+        {
+            AppsFlyerTracker.shared().appsFlyerDevKey = newAFDevKey
+        }
+    }
+    
+    var appId: String
+    {
+        get
+        {
+            return AppsFlyerTracker.shared().appleAppID
+        }
+        
+        set (newAppId)
+        {
+            AppsFlyerTracker.shared().appleAppID = newAppId
+        }
+    }
+    
+    var delegate: AppsFlyerTrackerDelegate
+    {
+        get
+        {
+            return AppsFlyerTracker.shared().delegate!
+        }
+        set(newDelegate)
+        {
+            AppsFlyerTracker.shared().delegate = newDelegate
+        }
+    }
+    
+    private static var sharedAdCustomTracker: AdCustomTracker =
+    {
+       return AdCustomTracker()
+    }()
+    
+    override private init()
+    {
+        
+    }
+    
+    class func shared() -> AdCustomTracker
+    {
+        return sharedAdCustomTracker
+    }
+    
+    func turnOnAFTracking()
+    {
+        
+    }
+    
+    func turnOffAFTracking()
+    {
+        
+    }
+        
+    
+    
     //Handle Conversion Data (Deferred Deep Link)
-     func onConversionDataSuccess(_ data: [AnyHashable: Any]) {
+    func onConversionDataSuccess(_ data: [AnyHashable: Any]) {
          print("\(data)")
          if let status = data["af_status"] as? String{
              if(status == "Non-organic"){
@@ -31,7 +96,8 @@ class AdCustomTracker: NSObject, AppsFlyerTrackerDelegate {
              }
          }
      }
-     func onConversionDataFail(_ error: Error) {
+    
+    func onConversionDataFail(_ error: Error) {
         print("\(error)")
      }
      

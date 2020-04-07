@@ -14,12 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppsFlyerTrackerDelegate 
     
     var window: UIWindow? // Support for iOS < 13
     
+    
     @objc func sendLaunch(app:Any) {
         AppsFlyerTracker.shared().trackAppLaunch()
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         
         AppsFlyerTracker.shared().appsFlyerDevKey = "2NWZKFmoUhRs8YssYpaZDd"
         AppsFlyerTracker.shared().appleAppID = "2614901321"
