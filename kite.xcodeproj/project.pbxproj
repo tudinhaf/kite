@@ -13,6 +13,10 @@
 		470FB2B02435CA57008CABC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470FB2AF2435CA57008CABC2 /* Assets.xcassets */; };
 		470FB2B32435CA57008CABC2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 470FB2B22435CA57008CABC2 /* Preview Assets.xcassets */; };
 		470FB2B62435CA57008CABC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 470FB2B42435CA57008CABC2 /* LaunchScreen.storyboard */; };
+		470FB2BE2435CBA2008CABC2 /* AppsFlyerLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470FB2BD2435CBA2008CABC2 /* AppsFlyerLib.framework */; };
+		470FB2C12435CC04008CABC2 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470FB2C02435CC04008CABC2 /* AdSupport.framework */; };
+		470FB2C32435CC09008CABC2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470FB2C22435CC09008CABC2 /* iAd.framework */; };
+		47DF08522439DE4100E628CD /* AdCustomTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF08512439DE4100E628CD /* AdCustomTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		470FB2B22435CA57008CABC2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		470FB2B52435CA57008CABC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		470FB2B72435CA57008CABC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		470FB2BD2435CBA2008CABC2 /* AppsFlyerLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppsFlyerLib.framework; sourceTree = "<group>"; };
+		470FB2C02435CC04008CABC2 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		470FB2C22435CC09008CABC2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		47DF08512439DE4100E628CD /* AdCustomTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCustomTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470FB2C32435CC09008CABC2 /* iAd.framework in Frameworks */,
+				470FB2BE2435CBA2008CABC2 /* AppsFlyerLib.framework in Frameworks */,
+				470FB2C12435CC04008CABC2 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 			children = (
 				470FB2A82435CA56008CABC2 /* kite */,
 				470FB2A72435CA56008CABC2 /* Products */,
+				470FB2BD2435CBA2008CABC2 /* AppsFlyerLib.framework */,
+				470FB2BF2435CC04008CABC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +69,7 @@
 		470FB2A82435CA56008CABC2 /* kite */ = {
 			isa = PBXGroup;
 			children = (
+				47DF08512439DE4100E628CD /* AdCustomTracker.swift */,
 				470FB2A92435CA56008CABC2 /* AppDelegate.swift */,
 				470FB2AB2435CA56008CABC2 /* SceneDelegate.swift */,
 				470FB2AD2435CA56008CABC2 /* ContentView.swift */,
@@ -73,6 +87,15 @@
 				470FB2B22435CA57008CABC2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		470FB2BF2435CC04008CABC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				470FB2C22435CC09008CABC2 /* iAd.framework */,
+				470FB2C02435CC04008CABC2 /* AdSupport.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DF08522439DE4100E628CD /* AdCustomTracker.swift in Sources */,
 				470FB2AA2435CA56008CABC2 /* AppDelegate.swift in Sources */,
 				470FB2AC2435CA56008CABC2 /* SceneDelegate.swift in Sources */,
 				470FB2AE2435CA56008CABC2 /* ContentView.swift in Sources */,
@@ -287,6 +311,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"kite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = kite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +334,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"kite/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = kite/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
